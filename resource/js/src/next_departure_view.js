@@ -163,8 +163,9 @@ define([
     // for new stops(didn't visit before), we get departures info from cache
     // otherwise we will do a ajax call to get the departure info.
   	getDepartures: function(stop, stopMarker) {
-  		if (stop.id in this.cachedDepartures) {
-  			this.renderDepartures(stop, stopMarker, this.cachedDepartures[stop.id]);
+  		// check whether cached and timestamp expired 
+  		if (stop.id in this.cachedDepartures && this.cachedDepartures[stop.id].timeStamp >= (new Date).getTime()) {
+  			this.renderDepartures(stop, stopMarker, this.cachedDepartures[stop.id].departures);
   		} else {
   			this.model.getDepartures(stop, stopMarker);
   		}
@@ -174,12 +175,14 @@ define([
   	renderDepartures: function(stop, stopMarker, departures) {
   		var self = this;
   		this.infoWindow.close();
-  		var cacheKey = stop.id;
-  		// cache the departure info.
-  		self.cachedDepartures[cacheKey] = departures;
+  		var timeStamp = departures[0].no_prediction == true ? 0 : departures[0].epoch_time;
+
   		// set info window for the stop
   		var content = '<b>' + stop.title + '</b></br>';
   		_.each(departures, function(departure) {
+  			if ((departure.epoch_time != null) && (timeStamp > departure.epoch_time || timeStamp == 0 )) {
+  				timeStamp = departure.epoch_time;
+  			}
   			if (departure.no_prediction == false) {
   				content += '<b>Route:' + departure.route_tag + '</b>' 
   				         + ' ' + new Date(parseInt(departure.epoch_time, 10)).toLocaleTimeString()
@@ -189,6 +192,16 @@ define([
   				         + ' No Prediction ' + ' → ' + departure.direction + '</br>';
   			}
   		});
+
+  		// if no prediction for all the departures,we set the timeStamp to 5 mins later. 
+  		// thus we can update cache for this after 5 mins.
+  		if (timeStamp == 0) {
+  			timeStamp = (new Date).getTime() + 5 * 60 * 1000;
+  		}
+
+      var cacheKey = stop.id;
+      // cache the departure info.
+  		self.cachedDepartures[cacheKey] = {departures: departures, timeStamp: timeStamp};
   		this.infoWindow.setContent(content);
   		this.infoWindow.open(self.map, stopMarker);
   	},
