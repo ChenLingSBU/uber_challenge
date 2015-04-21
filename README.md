@@ -1,7 +1,7 @@
 # Uber Project Challenge
 This is Uber project challenge for Next Departure Time. It's already hosted in Amazon AWS with url: http://ec2-54-69-234-115.us-west-2.compute.amazonaws.com/index.html
 
-Note: For simplicity, this application only can query next bus departure info for sf-muni in San Francisco. This applicaton can work on 
+Note: For simplicity, this application can only query next bus departure info for sf-muni in San Francisco. This applicaton can work on 
 desktops, mobiles, and tablets. If the device doesn't support geolocation or the user doesn't allow geolocation or the user's current 
 place is not in San Francisco, the application will default set the center of map to Uber Headquarter in San Francisco.
 
