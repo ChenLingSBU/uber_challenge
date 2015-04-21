@@ -75,23 +75,23 @@ define([
       // otherwise use the default center as the center of the map.
       if (self.geolocation && navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
-	      var pos = ({lat: position.coords.latitude, lng: position.coords.longitude});
-	      // use google api to reverse geocode, and check whether the user is in San Francisco
-	      // model.getAddress is to get the real human friendly address.
-        var ajaxDefer = self.model.getAddress(pos);
-        $.when(ajaxDefer)
-         .done(function(data) {
-           var address = data.results;
-           if (self.isSanFrancisco(address) == true) {
-             self.initMap(pos);
-           } else {
-           	 window.alert('You are not in San Francisco, map will redirect to Uber Headquarter@San Francisco')
-           	 self.initMap(self.defaultCenter);
-           }
-         })
-         .fail(function(jqXHR) {
-           window.alert('Error occured when getting current address: ' + jqXHR.status + ' ' + jqXHR.statusText);
-         });
+          var pos = ({lat: position.coords.latitude, lng: position.coords.longitude});
+          // use google api to reverse geocode, and check whether the user is in San Francisco
+          // model.getAddress is to get the real human friendly address.
+          var ajaxDefer = self.model.getAddress(pos);
+          $.when(ajaxDefer)
+           .done(function(data) {
+             var address = data.results;
+             if (self.isSanFrancisco(address) == true) {
+               self.initMap(pos);
+             } else {
+              window.alert('You are not in San Francisco, map will redirect to Uber Headquarter@San Francisco')
+              self.initMap(self.defaultCenter);
+             }
+           })
+           .fail(function(jqXHR) {
+             window.alert('Error occured when getting current address: ' + jqXHR.status + ' ' + jqXHR.statusText);
+           });
         });
       } else {
         self.initMap(self.defaultCenter);
@@ -155,7 +155,7 @@ define([
     cleanStopMarkers: function() {
       var self = this;
       _.each(self.stopMarkers, function(stopMarker) {
-      	stopMarker.setMap(null);
+      stopMarker.setMap(null);
       });
       self.stopMarkers = [];
     },
