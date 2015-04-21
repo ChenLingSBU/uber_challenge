@@ -9,10 +9,7 @@ place is not in San Francisco, the application will default set the center of ma
 I chose next departure time as my challenge project, which requires :
 > Create a service that gives real-time departure time for public transportation (use freely available public API). The app should geolocalize the user.
 
-What I did is exactly what it requires. For this project, I heavily used both backend technology and front end techonlogy, I don't have 
-any loyalty among all the technologyes and programming languages, I always like to pick up the proper tool to help myself do a better job.
-I will speak more details as below, such as describe the functionality and technology I used as well as my approach of the design, the most challenge part 
-of this project and where can be improved in the future. 
+What I did is exactly what it requires. The App will get the user's current geolocation, find and display bus stops covered by a circle centered at the user's location with radius 500 meters.
 
 ## Technical Stack
 ### Backend
