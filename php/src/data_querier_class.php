@@ -1,5 +1,5 @@
 <?php
-	/**
+/**
  * Data Querier Class
  * This class provides all the functions for querying data from frontend.
  *
@@ -14,12 +14,12 @@ require_once '../lib/spatial_distance_class.php';
 
 class DataQuerier {
 
-	public function get_departures_for_stop($stop_id, $stop_agency) {
+  public function get_departures_for_stop($stop_id, $stop_agency) {
     $next_bus = new NextBus();
     return $next_bus->get_departures_for_stop($stop_id, $stop_agency);
-	}
+  }
 
-	public function get_nearby_stops($lat, $lon, $stops_geo_hashmap) {
+  public function get_nearby_stops($lat, $lon, $stops_geo_hashmap) {
     $stops = [];
     $spatial_distance = new SpatialDistance();
     $neighbors_geo_hash = $this->get_adjacent_neighbors($lat, $lon);
@@ -31,7 +31,7 @@ class DataQuerier {
       }
     }
     return $stops;
-	}
+  }
 
   public function get_adjacent_neighbors($lat, $lon) {
     $geo_hash = new Geohash();
