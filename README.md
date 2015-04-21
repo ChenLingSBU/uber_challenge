@@ -41,7 +41,7 @@ For Frontend I only have two files:<br />
 2.) NextBusModel Class : contains all the ajax calls.<br />
 
 ## Challenges
-This part is my favorate. It's a good way for me to exhibit how I met problems and how I approched to figure them out. At the very first glance of the challenge, I thought it was just one day project that just need call NEXT BUS RESTful API then return the results to front end. However When I started working on this, I found it's not that easy, the reason is NEXT BUS RESTful API doen't provide functionality that with a given location and given radius it returns all the nearby stops covered by the cicle whose center is the given location.
+This part is my favorate. It's a good way for me to exhibit how I met problems and how I approched to figure them out. At the very first glance of the challenge, I thought it was just one day project that just need call NEXT BUS RESTful API then return the results to front end. However When I started working on this, I found it's not that easy, the reason is NEXT BUS RESTful API doesn't provide functionality that with a given location and given radius it returns all the nearby stops covered by the cicle whose center is the given location.
 Then I faced two challenges:<br /> 
 1.) How to get all the nearby stops within givin circle in other ways?<br />
 Well, it did take me some time to figure out, but my intuition is to use geohash(I just heard of this terminology but never used this before),then I spent some time researching on this, tried to understand the algorithem and finally applied this to my problem. <br />
