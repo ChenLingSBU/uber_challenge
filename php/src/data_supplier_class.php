@@ -2,8 +2,8 @@
 /**
  * Data Supplier Class
  * This class used to supply data as geohash and all the bus stops
- * 
- *  
+ *
+ *
  * @author Chen Ling <chling.sbu@gmail.com>
  * @copyright Chen Ling 2015
  * Released under the MIT License
@@ -32,7 +32,7 @@ class DataSupplier {
 		return $hashmap;
 	}
 
-  // get all the bus stops 
+  // get all the bus stops
 	public function get_all_stops($agency = NextBus::AGENCY) {
 		$next_bus = new NextBus();
 	  $routes = $next_bus->get_routes_for_agency($agency);

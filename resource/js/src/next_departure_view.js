@@ -1,7 +1,7 @@
 /**
- * View for Next Departure. 
- * For simplicity we only can query bus stop for sf-muni in San Francisco 
- *  
+ * View for Next Departure.
+ * For simplicity we only can query bus stop for sf-muni in San Francisco
+ *
  * @author Chen Ling <chling.sbu@gmail.com>
  * @copyright Chen Ling 2015
  * Released under the MIT License
@@ -23,7 +23,7 @@ define([
     // search radius is 500 meters
     searchRadius: 500,
     // This is used for testing purpose.
-    // When developing and testing I will set this to false, 
+    // When developing and testing I will set this to false,
     // and use default geolocation, since i'm not in San Francisco.
 
     geolocation: true,
@@ -105,7 +105,7 @@ define([
   			map: this.map,
   			icon:'./resource/img/person.png',
   			draggable: true
-  		}); 
+  		});
   	},
 
   	initCircle: function() {
@@ -159,11 +159,11 @@ define([
   		});
   		self.stopMarkers = [];
   	},
-    
+
     // for new stops(didn't visit before), we get departures info from cache
     // otherwise we will do a ajax call to get the departure info.
   	getDepartures: function(stop, stopMarker) {
-  		// check whether cached and timestamp expired 
+  		// check whether cached and timestamp expired
   		if (stop.id in this.cachedDepartures && this.cachedDepartures[stop.id].timeStamp >= (new Date).getTime()) {
   			this.renderDepartures(stop, stopMarker, this.cachedDepartures[stop.id].departures);
   		} else {
@@ -184,7 +184,7 @@ define([
   				timeStamp = departure.epoch_time;
   			}
   			if (departure.no_prediction == false) {
-  				content += '<b>Route:' + departure.route_tag + '</b>' 
+  				content += '<b>Route:' + departure.route_tag + '</b>'
   				         + ' ' + new Date(parseInt(departure.epoch_time, 10)).toLocaleTimeString()
   				         + ' → ' + departure.direction + '</br>';
   			} else {
@@ -193,7 +193,7 @@ define([
   			}
   		});
 
-  		// if no prediction for all the departures,we set the timeStamp to 5 mins later. 
+  		// if no prediction for all the departures,we set the timeStamp to 5 mins later.
   		// thus we can update cache for this after 5 mins.
   		if (timeStamp == 0) {
   			timeStamp = (new Date).getTime() + 5 * 60 * 1000;

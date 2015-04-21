@@ -1,6 +1,6 @@
 /**
  * main js file. This file is used for Require JS to configure and load initially dependencies.
- *  
+ *
  * @author Chen Ling <chling.sbu@gmail.com>
  * @copyright Chen Ling 2015
  * Released under the MIT License

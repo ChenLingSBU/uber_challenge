@@ -1,7 +1,7 @@
 <?php
 /**
  * Stop Class.
- *  
+ *
  * @author Chen Ling <chling.sbu@gmail.com>
  * @copyright Chen Ling 2015
  * Released under the MIT License

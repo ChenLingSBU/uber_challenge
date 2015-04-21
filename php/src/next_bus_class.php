@@ -2,7 +2,7 @@
 /**
  * Next Bus Class
  * It's an encapsulation class for all the core methods to retrieve data from Next Bus RESTful API.
- *  
+ *
  * @author Chen Ling <chling.sbu@gmail.com>
  * @copyright Chen Ling 2015
  * Released under the MIT License
@@ -12,8 +12,8 @@
 require_once './stop_class.php';
 require_once './departure_class.php';
 
-// set running time limit for this script to 600s, 
-// We don't have the cached files when we run this app for the first time. 
+// set running time limit for this script to 600s,
+// We don't have the cached files when we run this app for the first time.
 // this script will use Next Bus RESTful API to get all the bus stops for sf-muni which is a little bit slow.
 set_time_limit(600);
 class NextBus {

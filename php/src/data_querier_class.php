@@ -2,7 +2,7 @@
 /**
  * Data Querier Class
  * This class provides all the functions for querying data from frontend.
- *  
+ *
  * @author Chen Ling <chling.sbu@gmail.com>
  * @copyright Chen Ling 2015
  * Released under the MIT License

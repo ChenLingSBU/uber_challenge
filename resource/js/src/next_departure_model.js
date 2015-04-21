@@ -1,6 +1,6 @@
 /**
- * Model for Next Departure, contains ajax call and some data. 
- *  
+ * Model for Next Departure, contains ajax call and some data.
+ *
  * @author Chen Ling <chling.sbu@gmail.com>
  * @copyright Chen Ling 2015
  * Released under the MIT License

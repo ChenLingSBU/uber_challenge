@@ -3,7 +3,7 @@
  * Ajax Handler Script.
  * This script is a bridge between backend and frontend to communicate with each other.
  *
- *  
+ *
  * @author Chen Ling <chling.sbu@gmail.com>
  * @copyright Chen Ling 2015
  * Released under the MIT License
@@ -18,7 +18,7 @@ require_once './data_querier_class.php';
 if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
 	$command = $_GET['command'];
 
-  // init geohash. To improve web performance we attempt to get geohash from cache file, 
+  // init geohash. To improve web performance we attempt to get geohash from cache file,
   // if fail, we will re-calculate geohash.
 	$geohash = init_geohash();
 
