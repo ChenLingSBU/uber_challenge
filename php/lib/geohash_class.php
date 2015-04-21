@@ -17,7 +17,7 @@
  *
  */
 
-class Geohash {
+	class Geohash {
 
 	private $bitss = array(16, 8, 4, 2, 1);
 	private $neighbors = array();
