@@ -14,6 +14,7 @@ What I did is exactly what it requires. The App will get the user's current geol
 ## Technical Stack
 ### Backend
 The Backend was written in PHP. I wrote 6 php files in total.<br />
+
 1. Object representation class:<br />
    1.) stop_class.php : represent bus stop<br />
    2.) departure_class.php : represent departure info<br />
@@ -54,7 +55,7 @@ Since NEXT BUS RESTful API provides functionality to get all the stops for one r
 a. Looply excute exsiting RESTful API to build a function which can get all the stops for all the routes, then cache them.<br />
 b. using php curl concurrent way to send out many RESTful request at the same time to reduce the waiting time, then cache them.<br />
 Because of time limit, I only implemented the first way, I really wonder how faster the second method would be.<br />
-3.) When talk about cache, here's another problem, PHP is not like Node.js or Java, it's just excute script, php server won't have any status,  that is to say we cannot cache the bus stops and geohash in memory. Usually, If we want to improve the website performance,we always use memcache or Redis, just to retrieve data in Redis or Memcache anytime when we want data.  Since it's just a small assignment, I just stored data in stream data and write to disck.<br />
+3.) When talk about cache, here's another problem, PHP is not like Node.js or Java, it's just excute script, php server won't have any status,  that is to say we cannot cache the bus stops and geohash in memory. Usually, If we want to improve the website performance,we always use memcache or Redis, just to retrieve data in Redis or Memcache anytime when we want data.  Since it's just a small assignment, I just stored data in stream data and write to disk.<br />
 
 
   
