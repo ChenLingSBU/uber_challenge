@@ -35,7 +35,7 @@ Thanks to them that wrote good stuff that I don't have to make my own wheels. <b
 
 ### Frontend<br />
 I used Backbone.js for Frontend, and used require.js to orgnize all the js files as AMD modules.
-Thanks to Google who created such a beatiful and fexlibility javascript api that I can use them very smoothly, easily and fast.
+Thanks to Google who created googlemaps -- such a beatiful and flexible javascript api that I can use them very smoothly, easily and fast.
 
 For Frontend I only have two files:<br />
 1.) NextBusView class : contain all the business logics and render function<br />
