@@ -160,7 +160,7 @@ define([
       self.stopMarkers = [];
     },
 
-    // for new stops(didn't visit before), we get departures info from cache
+    // for visited stops, we get departures info from cache
     // otherwise we will do a ajax call to get the departure info.
     getDepartures: function(stop, stopMarker) {
       // check whether cached and timestamp expired
